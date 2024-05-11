@@ -1,6 +1,6 @@
 <template>
   <nav>
-    <h1>Typle</h1>
+    <h1 class="text-4xl">Typle</h1>
     <ul>
       <li><a href="">Home</a></li>
       <li><a href="">Play</a></li>
