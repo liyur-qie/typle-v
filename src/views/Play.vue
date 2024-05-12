@@ -13,7 +13,7 @@
     </section>
     <div class="w-4/5 mx-auto">
       <section id="wordList" class="mt-6">
-        <h1 class="text-xl my-3">Selected: {{ wordLists[0].name }}</h1>
+        <h1 class="text-xl my-3">Selected: {{ wordList.name }}</h1>
         <span
           v-for="(word, index) in wordLists[0].words"
           :key="index"
@@ -30,7 +30,7 @@
             <td class="text-sm text-gray-700">Words</td>
             <td class="text-sm text-gray-700">Date</td>
           </tr>
-          <tr v-for="(record, index) in rankingRecords">
+          <tr v-for="(record, index) in wordList">
             <td>{{ index + 1 }}</td>
             <td>{{ record.time }} seconds</td>
             <td>{{ record.length }} words</td>
@@ -67,37 +67,9 @@
     </div>
 </template>
 <script setup lang="ts">
-type RankingRecord = {
-  time: number | Date,
-  length: number,
-  date: string | Date
-}
-const rankingRecords: RankingRecord[] = [
-  { time: 4, length: 3, date: new Date().toLocaleString() },
-  { time: 5, length: 3, date: new Date().toLocaleString() },
-  { time: 6, length: 3, date: new Date().toLocaleString() },
-]
+import { WordList } from '@/models/screen/WordList';
+import { ref, computed } from 'vue';
 
-type WordListWord = {
-  wordDisplayed: string,
-  wordExpectedToInput: string,
-  annotation?: string,
-}
-
-type WordListInfo = {
-  createdAt: string | Date,
-  createdBy?: string,
-  updatedAt?: string | Date,
-  
-}
-
-type WordList = {
-  name: string,
-  description?: string
-  words: WordListWord[],
-  rankingRecords: RankingRecord[],
-  info: WordListInfo
-}
 const wordLists: WordList[] = [
   {
     name: "Example 1",
@@ -116,10 +88,18 @@ const wordLists: WordList[] = [
         wordExpectedToInput: "bar",
       },
     ],
-    rankingRecords: rankingRecords,
+    rankingRecords: [
+      { time: 4, length: 3, date: new Date().toLocaleString() },
+      { time: 5, length: 3, date: new Date().toLocaleString() },
+      { time: 6, length: 3, date: new Date().toLocaleString() },
+    ],
     info: {
       createdAt: new Date().toLocaleString(),
     }
   }
 ]
+
+const wordListIndex = ref(0)
+const wordList = computed(() => wordLists[wordListIndex.value])
+
 </script>
