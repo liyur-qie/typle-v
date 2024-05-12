@@ -3,83 +3,21 @@
     <div class="flex justify-between w-4/5">
       <h1 class="text-xl">Typle</h1>
       <ul class="flex">
-        <li v-for="navItem in navItems" class="text-sm py-3 px-6 hover:bg-gray-100">
-          <a href="#">{{ navItem }}</a>
+        <li v-for="navItem in navItems">
+          <router-link
+            :to="'/' + navItem"
+            class="text-sm py-3 px-6 hover:bg-gray-100"
+          >{{ navItem }}</router-link>
         </li>
       </ul>
     </div>
   </nav>
   <main class="mx-auto mt-12 bg-white w-4/5">
-    <section id="playArea">
-      <div
-        id="wordDisplay"
-        class="bg-gray-900 text-white flex justify-center items-center text-4xl h-28"
-      >Hello, World</div>
-      <input
-        type="text"
-        id="wordInputField"
-        class="bg-gray-800 text-white text-center w-full text-2xl font-light h-28 outline-none"
-        placeholder="Type the word above here"
-        />
-    </section>
-    <div class="w-4/5 mx-auto">
-      <section id="wordList" class="mt-6">
-        <h1 class="text-xl my-3">Selected: {{ wordLists[0].name }}</h1>
-        <span
-          v-for="(word, index) in wordLists[0].words"
-          :key="index"
-          class="text-sm mr-2 py-1 px-2 bg-gray-200"
-        >
-          {{ word.wordDisplayed }}
-        </span>
-      </section>
-      <section id="rankings" class="mt-6">
-        <table>
-          <tr>
-            <td class="text-sm text-gray-700">No.</td>
-            <td class="text-sm text-gray-700">Time</td>
-            <td class="text-sm text-gray-700">Words</td>
-            <td class="text-sm text-gray-700">Date</td>
-          </tr>
-          <tr v-for="(record, index) in rankingRecords">
-            <td>{{ index + 1 }}</td>
-            <td>{{ record.time }} seconds</td>
-            <td>{{ record.length }} words</td>
-            <td>{{ record.date }}</td>
-          </tr>
-        </table>
-      </section>
-      <section id="selectWordList">
-        <table>
-          <tr>
-            <td>
-              <span>Name</span>
-            </td>
-            <td>
-              <span>Length</span>
-            </td>
-            <td>
-              <span>Action</span>
-            </td>
-          </tr>
-          <tr v-for="(wordList, index) in wordLists">
-            <td :key="index">
-              <span>{{ wordList.name }}</span>
-            </td>
-            <td :key="index">
-              <span>{{ wordList.words.length }} words</span>
-            </td>
-            <td :key="index">
-              <button>PLAY</button>
-            </td>
-          </tr>
-        </table>
-      </section>
-    </div>
+    <router-view />
   </main>
 </template>
 <script setup lang="ts">
-const navItems = ["Home", "Play", "Rankings", "Create", "Edit", "About"]
+const navItems = ["home", "play", "Rankings", "Create", "Edit", "About"]
 
 type RankingRecord = {
   time: number | Date,
