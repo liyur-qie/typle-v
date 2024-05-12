@@ -67,37 +67,12 @@
     </div>
 </template>
 <script setup lang="ts">
-type RankingRecord = {
-  time: number | Date,
-  length: number,
-  date: string | Date
-}
 const rankingRecords: RankingRecord[] = [
   { time: 4, length: 3, date: new Date().toLocaleString() },
   { time: 5, length: 3, date: new Date().toLocaleString() },
   { time: 6, length: 3, date: new Date().toLocaleString() },
 ]
 
-type WordListWord = {
-  wordDisplayed: string,
-  wordExpectedToInput: string,
-  annotation?: string,
-}
-
-type WordListInfo = {
-  createdAt: string | Date,
-  createdBy?: string,
-  updatedAt?: string | Date,
-  
-}
-
-type WordList = {
-  name: string,
-  description?: string
-  words: WordListWord[],
-  rankingRecords: RankingRecord[],
-  info: WordListInfo
-}
 const wordLists: WordList[] = [
   {
     name: "Example 1",
