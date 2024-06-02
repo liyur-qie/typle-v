@@ -11,6 +11,8 @@ export class WordList implements WordListType {
   records: RankingRecord[] = []
   // 単語リスト情報
   info: WordListInfo = {
-    createdAt: ""
+    createdAt: "",
+    createdBy: "",
+    updatedAt: ""
   }
 }
