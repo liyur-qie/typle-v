@@ -1,0 +1,22 @@
+{
+  "wordLists": [
+    {
+      "name": "Example 1",
+      "description": "This is an example word list.",
+      "words": [
+        {
+          "wordDisplayed": "hoge",
+          "wordExpectedToInput": "hoge"
+        },
+        {
+          "wordDisplayed": "foo",
+          "wordExpectedToInput": "foo"
+        },
+        {
+          "wordDisplayed": "bar",
+          "wordExpectedToInput": "bar"
+        }
+      ]
+    }
+  ]
+}

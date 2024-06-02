@@ -6,7 +6,7 @@ export type RankingRecord = {
 
 export type WordListWord = {
   wordDisplayed: string,
-  wordExpectedToInput: string,
+  wordExpectedToInput?: string,
   annotation?: string,
 }
 
