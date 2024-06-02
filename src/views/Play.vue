@@ -30,7 +30,7 @@
             <td class="text-sm text-gray-700">Words</td>
             <td class="text-sm text-gray-700">Date</td>
           </tr>
-          <tr v-for="(record, index) in wordList">
+          <tr v-for="(record, index) in wordList.rankingRecords">
             <td>{{ index + 1 }}</td>
             <td>{{ record.time }} seconds</td>
             <td>{{ record.length }} words</td>
