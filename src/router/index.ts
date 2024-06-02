@@ -7,7 +7,7 @@ import HomeView from '../views/Home.vue'
 import PlayView from '../views/Play.vue'
 import RankingsView from '../views/Rankings.vue'
 
-const routes = [
+export const routes = [
   { path: '/', component: HomeView },
   { path: '/home', component: HomeView },
   { path: '/play', component: PlayView },
