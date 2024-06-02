@@ -23,37 +23,48 @@
       </v-chip>
     </section>
     <section id="rankings" class="mt-6">
-      <v-data-table-virtual
-        :headers="headers"
-        :items="wordList.records"
-        item-value="name"
-      ></v-data-table-virtual>
+      <v-table>
+        <thead>
+          <tr>
+            <th>No.</th>
+            <th>Time</th>
+            <th>Length</th>
+            <th>Date</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr v-for="(record, index) in wordList.records">
+            <td class="text-center">{{ index + 1 }}</td>
+            <td>{{ record.time }} seconds</td>
+            <td>{{ record.length }} words</td>
+            <td>{{ record.date }}</td>
+          </tr>
+        </tbody>
+      </v-table>
     </section>
     <section id="selectWordList">
-      <table>
-        <tr>
-          <td>
-            <span>Name</span>
-          </td>
-          <td>
-            <span>Length</span>
-          </td>
-          <td>
-            <span>Action</span>
-          </td>
-        </tr>
-        <tr v-for="(wordList, index) in wordLists">
-          <td :key="index">
-            <span>{{ wordList.name }}</span>
-          </td>
-          <td :key="index">
-            <span>{{ wordList.words.length }} words</span>
-          </td>
-          <td :key="index">
-            <button>PLAY</button>
-          </td>
-        </tr>
-      </table>
+      <v-table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Length</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr v-for="(wordList, index) in wordLists">
+            <td :key="index">
+              <span>{{ wordList.name }}</span>
+            </td>
+            <td :key="index">
+              <span>{{ wordList.words.length }} words</span>
+            </td>
+            <td :key="index">
+              <v-btn>PLAY</v-btn>
+            </td>
+          </tr>
+        </tbody>
+      </v-table>
     </section>
   </div>
 </template>
@@ -89,12 +100,5 @@ wordLists.push(exampleWordList)
 
 const wordListIndex = ref(0)
 const wordList = computed(() => wordLists[wordListIndex.value])
-
-const headers = [
-  { title: "No.", align: "start", key: "index" },
-  { title: "Time", align: "start", key: "time" },
-  { title: "Words", align: "start", key: "length" },
-  { title: "Date", align: "start", key: "date" },
-]
 
 </script>
