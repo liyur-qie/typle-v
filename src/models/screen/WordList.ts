@@ -8,7 +8,7 @@ export class WordList implements WordListType {
   // 単語リスト
   words: WordListWord[] = []
   // ランキング情報
-  rankingRecords: RankingRecord[] = []
+  records: RankingRecord[] = []
   // 単語リスト情報
   info: WordListInfo = {
     createdAt: ""

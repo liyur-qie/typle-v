@@ -30,7 +30,7 @@
             <td class="text-sm text-gray-700">Words</td>
             <td class="text-sm text-gray-700">Date</td>
           </tr>
-          <tr v-for="(record, index) in wordList.rankingRecords">
+          <tr v-for="(record, index) in wordList.records">
             <td>{{ index + 1 }}</td>
             <td>{{ record.time }} seconds</td>
             <td>{{ record.length }} words</td>
@@ -70,34 +70,31 @@
 import { WordList } from '@/models/screen/WordList';
 import { ref, computed } from 'vue';
 
-const wordLists: WordList[] = [
+const wordLists: WordList[] = []
+const exampleWordList = new WordList()
+exampleWordList.name = "Example 1"
+exampleWordList.description = "This is an example word list"
+exampleWordList.words = [
   {
-    name: "Example 1",
-    description: "This is an example word list",
-    words: [
-      {
-        wordDisplayed: "hoge",
-        wordExpectedToInput: "hoge",
-      },
-      {
-        wordDisplayed: "foo",
-        wordExpectedToInput: "foo",
-      },
-      {
-        wordDisplayed: "bar",
-        wordExpectedToInput: "bar",
-      },
-    ],
-    rankingRecords: [
-      { time: 4, length: 3, date: new Date().toLocaleString() },
-      { time: 5, length: 3, date: new Date().toLocaleString() },
-      { time: 6, length: 3, date: new Date().toLocaleString() },
-    ],
-    info: {
-      createdAt: new Date().toLocaleString(),
-    }
-  }
+    wordDisplayed: "hoge",
+    wordExpectedToInput: "hoge",
+  },
+  {
+    wordDisplayed: "foo",
+    wordExpectedToInput: "foo",
+  },
+  {
+    wordDisplayed: "bar",
+    wordExpectedToInput: "bar",
+  },
 ]
+exampleWordList.records = [
+  { time: 4, length: 3, date: new Date().toLocaleString() },
+  { time: 5, length: 3, date: new Date().toLocaleString() },
+  { time: 6, length: 3, date: new Date().toLocaleString() },
+]
+exampleWordList.info = { createdAt: new Date().toLocaleString()}
+wordLists.push(exampleWordList)
 
 const wordListIndex = ref(0)
 const wordList = computed(() => wordLists[wordListIndex.value])

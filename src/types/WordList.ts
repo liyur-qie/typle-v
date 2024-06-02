@@ -21,7 +21,7 @@ export type WordList = {
   name: string,
   description?: string
   words: WordListWord[],
-  rankingRecords: RankingRecord[],
+  records: RankingRecord[],
   info: WordListInfo
 }
 
