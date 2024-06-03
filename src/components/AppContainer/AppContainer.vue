@@ -1,10 +1,5 @@
 <template>
-  <div id="appContainer" class="w-9/12 mx-auto">
+  <div id="appContainer" class="w-10/12 mx-auto mt-20">
     <slot />
   </div>
 </template>
-<style lang="scss" scoped>
-#appContainer {
-  background-color: #fff;
-}
-</style>
