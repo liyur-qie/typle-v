@@ -19,7 +19,7 @@ export type WordListInfo = {
 
 export type WordList = {
   name: string,
-  description?: string
+  description: string,
   words: WordListWord[],
   records: RankingRecord[],
   info: WordListInfo

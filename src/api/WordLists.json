@@ -17,6 +17,24 @@
           "wordExpectedToInput": "bar"
         }
       ]
+    },
+    {
+      "name": "Example 2",
+      "description": "This is an example word list.",
+      "words": [
+        {
+          "wordDisplayed": "bar",
+          "wordExpectedToInput": "bar"
+        },
+        {
+          "wordDisplayed": "foo",
+          "wordExpectedToInput": "foo"
+        },
+        {
+          "wordDisplayed": "hoge",
+          "wordExpectedToInput": "hoge"
+        }
+      ]
     }
   ]
 }

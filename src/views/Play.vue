@@ -69,36 +69,14 @@
   </div>
 </template>
 <script setup lang="ts">
+import getWordList from '@/api/getWordList';
 import { WordList } from '@/models/screen/WordList';
 import { ref, computed } from 'vue';
 
-const wordLists: WordList[] = []
-const exampleWordList = new WordList()
-exampleWordList.name = "Example 1"
-exampleWordList.description = "This is an example word list"
-exampleWordList.words = [
-  {
-    wordDisplayed: "hoge",
-    wordExpectedToInput: "hoge",
-  },
-  {
-    wordDisplayed: "foo",
-    wordExpectedToInput: "foo",
-  },
-  {
-    wordDisplayed: "bar",
-    wordExpectedToInput: "bar",
-  },
-]
-exampleWordList.records = [
-  { time: 4, length: 3, date: new Date().toLocaleString() },
-  { time: 5, length: 3, date: new Date().toLocaleString() },
-  { time: 6, length: 3, date: new Date().toLocaleString() },
-]
-exampleWordList.info = { createdAt: new Date().toLocaleString()}
-wordLists.push(exampleWordList)
 
+const wordLists = ref<WordList[]>(getWordList())
 const wordListIndex = ref(0)
-const wordList = computed(() => wordLists[wordListIndex.value])
+const wordList = computed(() => wordLists.value[wordListIndex.value])
+
 
 </script>
