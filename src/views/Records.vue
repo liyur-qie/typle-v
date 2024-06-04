@@ -1,8 +1,8 @@
 <template>
   <AppContainer class="flex justify-center">
     <main class="w-11/12 bg-white p-16 pb-12">
-      <h1 class="text-5xl">記録</h1>
-      <p class="text-base mt-6">Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa mi.</p>
+      <PageTitle>記録</PageTitle>
+      <PageDescription>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</PageDescription>
       <section v-for="(wordList, index) in wordLists" :key="index" class="mt-12">
         <h2 class="text-2xl">{{ wordList.name }}</h2>
         <v-table class="mt-4">
@@ -37,6 +37,8 @@
 <script setup lang="ts">
 import getWordLists from '@/api/getWordLists';
 import AppContainer from '@/components/AppContainer/AppContainer.vue';
+import PageDescription from "@/components/Pages/PageDescription.vue";
+import PageTitle from '@/components/Pages/PageTitle.vue';
 import { WordList } from '@/models/screen/WordList';
 import { ref } from 'vue';
 
