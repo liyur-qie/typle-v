@@ -11,5 +11,8 @@ import NavbarListItem from "@/components/Navbar/NavbarListItem.vue"
 
 const routes = [
   { title: "ホーム", path: "/home" },
+  { title: "記録", path: "/records" },
+  { title: "作成", path: "/create" },
+  { title: "編集", path: "/edit" },
 ]
 </script>

@@ -15,7 +15,7 @@
       </section>
       <div class="mx-auto mt-8 px-6">
         <section id="wordList">
-          <h1 class="text-xl my-3">Selected: {{ wordList.name }}</h1>
+          <h1 class="text-xl my-3">選択中: {{ wordList.name }}</h1>
           <v-chip
             v-for="(word, index) in wordLists[0].words"
             :key="index"
