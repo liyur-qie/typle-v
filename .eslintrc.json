@@ -20,5 +20,6 @@
   "env": {
     "browser": true,
     "es6": true
-  }
+  },
+  "ignorePatterns": ["src/vite-env.d.ts"]
 }
