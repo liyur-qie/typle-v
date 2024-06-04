@@ -1,4 +1,4 @@
-import type { RankingRecord, WordListWord, WordListInfo, WordList as WordListType } from "@/types/WordList";
+import type { WordListRecord, WordListWord, WordListInfo, WordList as WordListType } from "@/types/WordList";
 
 export class WordList implements WordListType {
   // 単語リスト名
@@ -8,7 +8,7 @@ export class WordList implements WordListType {
   // 単語リスト
   words: WordListWord[] = []
   // ランキング情報
-  records: RankingRecord[] = []
+  records: WordListRecord[] = []
   // 単語リスト情報
   info: WordListInfo = {
     createdAt: "",

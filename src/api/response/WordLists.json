@@ -41,7 +41,8 @@
           "display": "hoge",
           "input": "hoge"
         }
-      ]
+      ],
+      "records": []
     }
   ]
 }

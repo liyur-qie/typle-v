@@ -17,14 +17,14 @@
         <section id="wordList">
           <h1 class="text-xl my-3">選択中: {{ wordList.name }}</h1>
           <v-chip
-            v-for="(word, index) in wordLists[0].words"
+            v-for="(word, index) in wordList.words"
             :key="index"
             class="text-sm mr-2 py-1 px-2 bg-gray-200"
           >
             {{ word.input }}
           </v-chip>
         </section>
-        <section class="mt-12 flex justify-between">
+        <section class="mt-8 flex justify-between">
           <section id="rankings" class="w-6/12">
             <h2 class="text-2xl">ランキング</h2>
             <v-table>
@@ -43,6 +43,7 @@
                   <td>{{ record.length }} words</td>
                   <td>{{ record.date }}</td>
                 </tr>
+                <p v-if="wordList.records.length === 0" class="text-sm mt-4">まだ記録がありません。</p>
               </tbody>
             </v-table>
           </section>
@@ -65,7 +66,12 @@
                     <span>{{ wordList.words.length }} words</span>
                   </td>
                   <td :key="index">
-                    <v-btn>PLAY</v-btn>
+                    <template v-if="wordListIndex === index">
+                      <v-btn disabled>Selected</v-btn>
+                    </template>
+                    <template v-else>
+                      <v-btn @click="selectWordList(index)">PLAY</v-btn>
+                    </template>
                   </td>
                 </tr>
               </tbody>
@@ -101,5 +107,8 @@ const wordLists = ref<WordList[]>(getWordLists())
 const wordListIndex = ref(0)
 const wordList = computed(() => wordLists.value[wordListIndex.value])
 
+function selectWordList(newWordListIndex: number){
+  wordListIndex.value = newWordListIndex
+}
 
 </script>
