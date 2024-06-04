@@ -1,9 +1,11 @@
-# Vue 3 + TypeScript + Vite
+# Typle-v
 
-This template should help get you started developing with Vue 3 and TypeScript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+Typle(タイプル)はタイピング練習用のWebアプリです。
 
-## Recommended Setup
+タイプ練習に出題される単語は自身で作成・編集することができ、カスタマイズ可能です。
 
-- [VS Code](https://code.visualstudio.com/) + [Vue - Official](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (previously Volar) and disable Vetur
+## ローカル環境での方法
 
-- Use [vue-tsc](https://github.com/vuejs/language-tools/tree/master/packages/tsc) for performing the same type checking from the command line, or for generating d.ts files for SFCs.
+1. このリポジトリをクローン
+2. `npm i`でパッケージをインストール
+3. `npm run dev`を実行
