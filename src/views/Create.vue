@@ -11,7 +11,7 @@
           <thead>
             <tr>
               <th>No.</th>
-              <th>Word</th>
+              <th class="w-4/12">Word</th>
               <th>Length</th>
               <th>Actions</th>
             </tr>
@@ -43,21 +43,26 @@
         </v-table>
       </section>
       <section class="mt-8">
-        <v-btn elevation="2" class="mr-2">Create</v-btn>
+        <v-btn @click="addWordList" elevation="2" class="mr-2">Create</v-btn>
         <v-btn elevation="2">Cancel</v-btn>
       </section>
     </main>
   </AppContainer>
 </template>
 <script setup lang="ts">
+import getWordLists from '@/api/getWordLists';
 import AppContainer from '@/components/AppContainer/AppContainer.vue';
 import PageDescription from '@/components/Pages/PageDescription.vue';
 import PageTitle from '@/components/Pages/PageTitle.vue';
+import { WordList } from '@/models/screen/WordList';
 import { ref } from 'vue';
+
 
 const wordListName = ref("Example 3")
 const wordListWords = ref<string[]>(["vue", "react", "svelte"])
 const newWord = ref("")
+
+const wordLists = ref<WordList[]>(getWordLists())
 
 function addNewWord() {
   wordListWords.value.push(newWord.value)
@@ -83,5 +88,16 @@ function moveWordDown(index: number){
 
 function deleteWord(index: number){
   wordListWords.value.splice(index, 1)
+}
+
+function addWordList(){
+  const newWordList = new WordList()
+  newWordList.name = wordListName.value
+  newWordList.words = wordListWords.value.map(word => ({
+    display: word,
+    input: word
+  }))
+  newWordList.info.createdAt = new Date().toLocaleString()
+  wordLists.value.push(newWordList)
 }
 </script>
