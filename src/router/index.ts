@@ -9,13 +9,12 @@ import RecordsView from '../views/Records.vue'
 
 export const routes = [
   { path: '/', component: PlayView },
-  { path: '/home', component: PlayView },
+  { path: '/home', component: AboutView },
   { path: '/play', component: PlayView },
   { path: '/records', component: RecordsView },
   { path: '/create', component: CreateView },
   { path: '/edit/:id', component: EditWordListView },
   { path: '/edit', component: EditView },
-  { path: '/about', component: AboutView },
 ]
 
 const router = createRouter({
