@@ -1,6 +1,6 @@
 <template>
   <div className="flex flex-wrap">
-    <Sidebar />
+    <Sidebar class="hidden lg:block"/>
     <div className="flex-auto">
       <Navbar />
       <main>

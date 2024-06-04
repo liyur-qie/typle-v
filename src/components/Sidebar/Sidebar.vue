@@ -12,6 +12,6 @@ import NavList from "@/components/Sidebar/NavList.vue"
 <style lang="scss">
 #sidebar {
   background-color: #fff;
-  height: 100vh;
+  height: 100lvh;
 }
 </style>

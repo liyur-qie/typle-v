@@ -1,6 +1,6 @@
 <template>
-  <AppContainer class="flex justify-between">
-    <main class="w-9/12 bg-white pb-12">
+  <AppContainer class="flex justify-center">
+    <main class="w-11/12 lg:w-9/12 bg-white pb-12">
       <section id="playArea">
         <div
           id="wordDisplay"
@@ -74,7 +74,7 @@
         </section>
       </div>
     </main>
-    <aside class="ml-8 flex-auto">
+    <aside class="hidden ml-8 flex-auto">
       <SidePanel class="mb-8">
         <h1 class="text-xl">Sidepanel</h1>
         <p>dfadf</p>
