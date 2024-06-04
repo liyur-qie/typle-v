@@ -9,9 +9,8 @@ import NavListItem from "@/components/Sidebar/NavListItem.vue"
 const routes = [
   { path: '/home', name: "ホーム" },
   { path: '/play', name: "遊ぶ" },
-  { path: '/rankings', name: "ランキング" },
-  { path: '/create', name: "単語リスト作成" },
-  { path: '/edit', name: "単語リスト編集" },
-
+  { path: '/rankings', name: "記録" },
+  { path: '/create', name: "作成" },
+  { path: '/edit', name: "編集" },
 ]
 </script>

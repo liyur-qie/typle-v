@@ -1,5 +1,5 @@
 <template>
-  <li className="navbarListItem">
+  <li class="navbarListItem">
     <RouterLink :to="path" class="block text-sm py-5 px-6">
       <slot />
     </RouterLink>

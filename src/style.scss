@@ -2,8 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 
+// <uniquifier>: Use a unique and descriptive class name
+// <weight>: Use a value from 100 to 900
+
+// .noto-sans-jp-<uniquifier> {
+//   font-family: "Noto Sans JP", sans-serif;
+//   font-optical-sizing: auto;
+//   font-weight: <weight>;
+//   font-style: normal;
+// }
+
 :root {
-  font-family: Inter, "游ゴシック", "Yu Gothic", sans-serif;
+  font-family: "Noto Sans JP", sans-serif;
 }
 
 body {
