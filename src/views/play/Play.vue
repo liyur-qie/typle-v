@@ -5,8 +5,9 @@
         <div
           id="wordDisplay"
           class="bg-gray-900 text-white flex justify-center items-center text-4xl h-28"
-        >Hello, World</div>
+        >{{ wordExpectedToInput }}</div>
         <input
+          v-model="wordInputField"
           type="text"
           id="wordInputField"
           class="bg-gray-800 text-white text-center w-full text-2xl font-light h-28 outline-none"
@@ -99,16 +100,47 @@
 <script setup lang="ts">
 import getWordLists from '@/api/getWordLists.js';
 import { WordList } from '@/models/screen/WordList';
-import { ref, computed } from 'vue';
+import { ref, computed, watch } from 'vue';
 import AppContainer from "@/components/AppContainer/AppContainer.vue"
 import SidePanel from "@/components/SidePanel/SidePanel.vue"
+import { WordListRecord } from '@/types/WordList';
 
 const wordLists = ref<WordList[]>(getWordLists())
 const wordListIndex = ref(0)
-const wordList = computed(() => wordLists.value[wordListIndex.value])
+const wordList = computed<WordList>(() => wordLists.value[wordListIndex.value])
 
 function selectWordList(newWordListIndex: number){
   wordListIndex.value = newWordListIndex
+  wordIndex.value = 0
+  gameState.value = "stand_by"
 }
 
+const wordIndex = ref(0)
+const wordInputField = ref("")
+const wordExpectedToInput = computed(() => {
+  if(wordIndex.value === wordList.value.words.length) return ""
+  return wordList.value.words[wordIndex.value].input
+})
+
+type GameState = "stand_by" | "playing" | "accomplished"
+const gameState = ref<GameState>("stand_by")
+
+watch(wordInputField, () => {
+  if(wordIndex.value === wordList.value.words.length) {
+    gameState.value = "accomplished"
+    const newRecord: WordListRecord = {
+      time: 3,
+      length: wordList.value.words.length,
+      date: new Date().toLocaleString()
+    }
+    wordList.value.records.push(newRecord)
+    wordInputField.value = "Accomplished!"
+    return
+  }
+
+  if(wordInputField.value === wordExpectedToInput.value){
+    wordIndex.value++
+    wordInputField.value = ""
+  }
+})
 </script>
