@@ -1,13 +1,24 @@
 {
+  "root": true,
   "rules": {
     "semi": ["error", "never"],
     "quotes": ["error", "single"]
   },
-  "extends": "eslint:recommended",
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended"
+  ],
+  "parser": "@typescript-eslint/parser",
   "parserOptions": {
-    "ecmaVersion": "latest"
+    "ecmaVersion": "latest",
+    "sourceType": "module",
+    "project": ["./tsconfig.json"]
   },
+  "plugins": [
+    "@typescript-eslint"
+  ],
   "env": {
+    "browser": true,
     "es6": true
   }
 }
