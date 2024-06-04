@@ -21,7 +21,7 @@
             :key="index"
             class="text-sm mr-2 py-1 px-2 bg-gray-200"
           >
-            {{ word.wordDisplayed }}
+            {{ word.input }}
           </v-chip>
         </section>
         <section class="mt-12 flex justify-between">
@@ -91,13 +91,13 @@
   </AppContainer>
 </template>
 <script setup lang="ts">
-import getWordList from '@/api/getWordList';
+import getWordLists from '@/api/getWordLists.js';
 import { WordList } from '@/models/screen/WordList';
 import { ref, computed } from 'vue';
 import AppContainer from "@/components/AppContainer/AppContainer.vue"
 import SidePanel from "@/components/SidePanel/SidePanel.vue"
 
-const wordLists = ref<WordList[]>(getWordList())
+const wordLists = ref<WordList[]>(getWordLists())
 const wordListIndex = ref(0)
 const wordList = computed(() => wordLists.value[wordListIndex.value])
 

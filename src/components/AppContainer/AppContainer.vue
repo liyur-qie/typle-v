@@ -1,5 +1,5 @@
 <template>
-  <div class="appContainer mx-auto mt-20">
+  <div class="appContainer mx-auto mt-12">
     <slot />
   </div>
 </template>

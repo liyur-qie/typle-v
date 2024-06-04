@@ -4,7 +4,7 @@ import AboutView from '../views/About.vue'
 import CreateView from '../views/Create.vue'
 import EditView from '../views/Edit.vue'
 import HomeView from '../views/Home.vue'
-import PlayView from '../views/Play.vue'
+import PlayView from '../views/play/Play.vue'
 import RankingsView from '../views/Rankings.vue'
 
 export const routes = [

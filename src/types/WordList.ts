@@ -1,12 +1,12 @@
-export type RankingRecord = {
+export type WordListRecord = {
   time: number | Date,
   length: number,
   date: string | Date
 }
 
 export type WordListWord = {
-  wordDisplayed: string,
-  wordExpectedToInput?: string,
+  display?: string,
+  input: string,
   annotation?: string,
 }
 
@@ -21,7 +21,7 @@ export type WordList = {
   name: string,
   description: string,
   words: WordListWord[],
-  records: RankingRecord[],
+  records: WordListRecord[],
   info: WordListInfo
 }
 

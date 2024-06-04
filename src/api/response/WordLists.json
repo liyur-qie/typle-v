@@ -1,0 +1,47 @@
+{
+  "wordLists": [
+    {
+      "name": "Example 1",
+      "description": "This is an example word list.",
+      "words": [
+        {
+          "display": "hoge",
+          "input": "hoge"
+        },
+        {
+          "display": "foo",
+          "input": "foo"
+        },
+        {
+          "display": "bar",
+          "input": "bar"
+        }
+      ],
+      "records": [
+        {
+          "time": 2,
+          "length": 3,
+          "date": "2024/6/4 18:24:18"
+        }
+      ]
+    },
+    {
+      "name": "Example 2",
+      "description": "This is an example word list.",
+      "words": [
+        {
+          "display": "bar",
+          "input": "bar"
+        },
+        {
+          "display": "foo",
+          "input": "foo"
+        },
+        {
+          "display": "hoge",
+          "input": "hoge"
+        }
+      ]
+    }
+  ]
+}
