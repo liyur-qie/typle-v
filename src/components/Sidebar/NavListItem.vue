@@ -11,7 +11,7 @@ defineProps<{
   isSelected: boolean
 }>()
 </script>
-<style lang="scss">
+<style lang="scss" scoped>
 li {
   &.selected {
     a {

@@ -1,5 +1,5 @@
 <template>
-  <nav class="flex justify-center items-center h-16 bg-white">
+  <nav class="flex justify-center items-center bg-white">
     <div class="navbar w-full">
       <div class="flex justify-end w-4/5 mx-auto">
         <NavbarList />

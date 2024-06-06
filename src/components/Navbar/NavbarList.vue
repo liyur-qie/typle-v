@@ -1,6 +1,6 @@
 <template>
   <ul class="flex list-style-none">
-      <NavbarListItem v-for="(route, index) in routes" :key="index" :path="route.path">{{ route.title }}</NavbarListItem>
+      <NavbarListItem v-for="(route, index) in routes" :key="index" :path="route.path" :isSelected="isSelected(route.path)">{{ route.text }}</NavbarListItem>
       <li>
         <a href="https://github.com/liyur-qie/typle-v" class="block text-sm py-5 px-6">GitHub</a>
       </li>
@@ -8,11 +8,18 @@
 </template>
 <script setup lang="ts">
 import NavbarListItem from "@/components/Navbar/NavbarListItem.vue"
+import { useRoute } from "vue-router";
 
 const routes = [
-  { title: "ホーム", path: "/home" },
-  { title: "記録", path: "/records" },
-  { title: "作成", path: "/create" },
-  { title: "編集", path: "/edit" },
+{ path: '/home', text: "ホーム" },
+  { path: '/play', text: "遊ぶ" },
+  { path: '/records', text: "記録" },
+  { path: '/create', text: "作成" },
+  { path: '/edit', text: "編集" },
 ]
+
+const route = useRoute()
+function isSelected(path: string): boolean {
+  return path === route.path
+}
 </script>

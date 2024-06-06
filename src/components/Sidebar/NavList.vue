@@ -16,8 +16,6 @@ const routes = [
 ]
 
 const route = useRoute()
-console.log(route)
-
 function isSelected(path: string): boolean {
   return path === route.path
 }
