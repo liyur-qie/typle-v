@@ -1,6 +1,6 @@
 <template>
-  <AppContainer >
-    <div class="container flex justify-around">
+  <Page>
+    <PageContainer class="flex justify-around">
       <main>
         <section>
           <h1 class="text-5xl">概要</h1>
@@ -33,12 +33,12 @@
           </li>
         </ul>
       </aside>
-    </div>
-  </AppContainer>
+    </PageContainer>
+  </Page>
 </template>
 <script setup lang="ts">
-import AppContainer from '@/components/AppContainer/AppContainer.vue';
-
+import Page from '@/components/Pages/Page.vue';
+import PageContainer from '@/components/Pages/PageContainer.vue';
 const indexes = ["概要", "遊び方", "練習記録の確認", "練習記録の削除", "単語リストの作成", "単語リストの編集", "単語リストの削除"]
 </script>
 <style lang="scss" scoped>
