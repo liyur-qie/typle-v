@@ -3,8 +3,8 @@
     <PageContainer>
         <main class="bg-white p-16 pb-12">
         <section>
-          <PageTitle>作成</PageTitle>
-          <PageDescription>このページでは単語リストを新規作成することができます。</PageDescription>
+          <PageTitle>{{ $t('create.pageTitle') }}</PageTitle>
+          <PageDescription>{{ $t('create.pageDescription') }}</PageDescription>
         </section>
         <section class="mt-8">
           <v-text-field v-model="wordListName" label="単語リスト名" variant="underlined"></v-text-field>
@@ -12,9 +12,9 @@
             <thead>
               <tr>
                 <th>No.</th>
-                <th class="w-4/12">Word</th>
-                <th>Length</th>
-                <th>Actions</th>
+                <th class="w-4/12">{{ $t('create.table.word') }}</th>
+                <th>{{ $t('create.table.length') }}</th>
+                <th>{{ $t('create.table.actions') }}</th>
               </tr>
             </thead>
             <tbody>
@@ -23,11 +23,11 @@
                 <td>
                   <v-text-field v-model="wordListWords[index]" variant="underlined"></v-text-field>
                 </td>
-                <td>{{ word.length }} characters</td>
+                <td>{{ word.length }} {{ $t('create.tableData.length') }}</td>
                 <td>
-                  <v-btn @click="moveWordUp(index)" class="mr-2">UP</v-btn>
-                  <v-btn @click="moveWordDown(index)" class="mr-2">DOWN</v-btn>
-                  <v-btn @click="deleteWord(index)">DELETE</v-btn>
+                  <v-btn @click="moveWordUp(index)" class="mr-2">{{ $t('create.tableData.actions.moveUp') }}</v-btn>
+                  <v-btn @click="moveWordDown(index)" class="mr-2">{{ $t('create.tableData.actions.moveDown') }}</v-btn>
+                  <v-btn @click="deleteWord(index)">{{ $t('create.tableData.actions.delete') }}</v-btn>
                 </td>
               </tr>
               <tr>
@@ -44,8 +44,8 @@
           </v-table>
         </section>
         <section class="mt-8">
-          <v-btn @click="addWordList" elevation="2" class="mr-2">Create</v-btn>
-          <v-btn elevation="2">Cancel</v-btn>
+          <v-btn @click="addWordList" elevation="2" class="mr-2">{{ $t('create.createButton') }}</v-btn>
+          <v-btn elevation="2">{{ $t('create.cancelButton') }}</v-btn>
         </section>
       </main>
     </PageContainer>

@@ -2,30 +2,30 @@
   <Page>
     <PageContainer>
       <main class="bg-white p-16 pb-12">
-        <PageTitle>記録</PageTitle>
-        <PageDescription>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</PageDescription>
+        <PageTitle>{{ $t('records.pageTitle')}}</PageTitle>
+        <PageDescription>{{ $t('records.PageDescription') }}</PageDescription>
         <section v-for="(wordList, index) in wordLists" :key="index" class="mt-12">
           <h2 class="text-2xl">{{ wordList.name }}</h2>
           <v-table class="mt-4">
             <thead>
               <tr>
                 <th>No.</th>
-                <th>Time</th>
-                <th>Typo</th>
-                <th>Length</th>
-                <th>Date</th>
-                <th>Action</th>
+                <th>{{ $t('records.table.time') }}</th>
+                <th>{{ $t('records.table.typo') }}</th>
+                <th>{{ $t('records.table.length') }}</th>
+                <th>{{ $t('records.table.date') }}</th>
+                <th>{{ $t('records.table.actions') }}</th>
               </tr>
             </thead>
             <tbody>
               <tr v-for="(record, index) in wordList.records">
                 <td class="text-center">{{ index + 1 }}</td>
-                <td>{{ record.time }} seconds</td>
+                <td>{{ record.time }} {{ $t('records.tableData.time') }}</td>
                 <td>未実装</td>
-                <td>{{ record.length }} words</td>
+                <td>{{ record.length }} {{ $t('records.tableData.length') }}</td>
                 <td>{{ record.date }}</td>
                 <td>
-                  <v-btn size="small" @click="deleteRecord(index)">Delete</v-btn>
+                  <v-btn size="small" @click="deleteRecord(index)">{{ $t('records.tableData.actions.delete') }}</v-btn>
                 </td>
               </tr>
               <p v-if="wordList.records.length === 0" class="text-sm mt-4">まだ記録がありません。</p>

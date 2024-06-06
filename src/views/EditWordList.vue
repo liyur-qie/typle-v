@@ -3,8 +3,8 @@
     <PageContainer>
       <main class="bg-white p-16 pb-12">
         <section>
-          <PageTitle>編集</PageTitle>
-          <PageDescription>このページでは単語リストを編集することができます。</PageDescription>
+          <PageTitle>{{ $t('editWordList.pageTitle') }}</PageTitle>
+          <PageDescription>{{ $t('editWordList.pageDescription') }}</PageDescription>
         </section>
         <section class="mt-8">
           <v-text-field v-model="wordListName" label="単語リスト名" variant="underlined"></v-text-field>
@@ -12,9 +12,9 @@
             <thead>
               <tr>
                 <th>No.</th>
-                <th class="w-4/12">Word</th>
-                <th>Length</th>
-                <th>Actions</th>
+                <th class="w-4/12">{{ $t('editWordList.table.word') }}</th>
+                <th>{{ $t('editWordList.table.length') }}</th>
+                <th>{{ $t('editWordList.table.actions') }}</th>
               </tr>
             </thead>
             <tbody>
@@ -23,11 +23,11 @@
                 <td>
                   <v-text-field v-model="wordListWords[index]" variant="underlined"></v-text-field>
                 </td>
-                <td>{{ word.length }} characters</td>
+                <td>{{ word.length }} {{ $t('editWordList.tableData.length') }}</td>
                 <td>
-                  <v-btn @click="moveWordUp(index)" class="mr-2">UP</v-btn>
-                  <v-btn @click="moveWordDown(index)" class="mr-2">DOWN</v-btn>
-                  <v-btn @click="deleteWord(index)">DELETE</v-btn>
+                  <v-btn @click="moveWordUp(index)" class="mr-2">{{ $t('editWordList.tableData.actions.moveUp') }}</v-btn>
+                  <v-btn @click="moveWordDown(index)" class="mr-2">{{ $t('editWordList.tableData.actions.moveDown') }}</v-btn>
+                  <v-btn @click="deleteWord(index)">{{ $t('editWordList.tableData.actions.delete') }}</v-btn>
                 </td>
               </tr>
               <tr>
@@ -35,7 +35,7 @@
                 <td>
                   <v-text-field v-model="newWord" label="新規単語を入力" variant="underlined"></v-text-field>
                 </td>
-                <td>{{ newWord.length }} characters</td>
+                <td>{{ newWord.length }} {{ $t('editWordList.tableData.length') }}</td>
                 <td>
                   <v-btn @click="addNewWord">Add</v-btn>
                 </td>
@@ -44,9 +44,9 @@
           </v-table>
         </section>
         <section class="mt-8">
-          <v-btn @click="updateWordList" elevation="2" class="mr-2">Update</v-btn>
+          <v-btn @click="updateWordList" elevation="2" class="mr-2">{{ $t('editWordList.updateButton') }}</v-btn>
           <RouterLink to="/edit">
-            <v-btn elevation="2">Cancel</v-btn>
+            <v-btn elevation="2">{{ $t('editWordList.cancelButton') }}</v-btn>
           </RouterLink>
         </section>
       </main>

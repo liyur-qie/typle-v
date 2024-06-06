@@ -28,21 +28,21 @@
           </section>
           <section class="mt-8 flex justify-between">
             <section id="rankings" class="w-6/12">
-              <h2 class="text-2xl">ランキング</h2>
+              <h2 class="text-2xl">{{ $t('play.records.title')}}</h2>
               <v-table>
                 <thead>
                   <tr>
-                    <th>No.</th>
-                    <th>Time</th>
-                    <th>Length</th>
-                    <th>Date</th>
+                    <th>{{ $t('play.records.table.no') }}</th>
+                    <th>{{ $t('play.records.table.time') }}</th>
+                    <th>{{ $t('play.records.table.length') }}</th>
+                    <th>{{ $t('play.records.table.date') }}</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr v-for="(record, index) in wordList.records">
                     <td class="text-center">{{ index + 1 }}</td>
-                    <td>{{ record.time }} seconds</td>
-                    <td>{{ record.length }} words</td>
+                    <td>{{ record.time }} {{ $t('play.records.tableData.time') }}</td>
+                    <td>{{ record.length }} {{ $t('play.records.tableData.length') }}</td>
                     <td>{{ record.date }}</td>
                   </tr>
                   <p v-if="wordList.records.length === 0" class="text-sm mt-4">まだ記録がありません。</p>
@@ -50,13 +50,13 @@
               </v-table>
             </section>
             <section id="selectWordList" class="w-5/12">
-              <h2 class="text-2xl">単語リスト</h2>
+              <h2 class="text-2xl">{{ $t('play.wordLists.title') }}</h2>
               <v-table>
                 <thead>
                   <tr>
-                    <th>Name</th>
-                    <th>Length</th>
-                    <th>Action</th>
+                    <th>{{ $t('play.wordLists.table.name') }}</th>
+                    <th>{{ $t('play.wordLists.table.length') }}</th>
+                    <th>{{ $t('play.wordLists.table.actions') }}</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -65,14 +65,14 @@
                       <span>{{ wordList.name }}</span>
                     </td>
                     <td :key="index">
-                      <span>{{ wordList.words.length }} words</span>
+                      <span>{{ wordList.words.length }} {{ $t('play.wordLists.tableData.length') }}</span>
                     </td>
                     <td :key="index">
                       <template v-if="wordListIndex === index">
-                        <v-btn disabled>Selected</v-btn>
+                        <v-btn disabled>{{ $t('play.wordLists.tableData.selected')}}</v-btn>
                       </template>
                       <template v-else>
-                        <v-btn @click="selectWordList(index)">PLAY</v-btn>
+                        <v-btn @click="selectWordList(index)">{{ $t('play.wordLists.tableData.select') }}</v-btn>
                       </template>
                     </td>
                   </tr>
