@@ -8,6 +8,7 @@
         </section>
         <section class="mt-8">
           <v-text-field v-model="wordListName" label="単語リスト名" variant="underlined"></v-text-field>
+          <p>{{ isAvailableWordListName }}</p>
           <v-table>
             <thead>
               <tr>
@@ -60,8 +61,16 @@ import PageContainer from '@/components/Pages/PageContainer.vue';
 import PageDescription from '@/components/Pages/PageDescription.vue';
 import PageTitle from '@/components/Pages/PageTitle.vue';
 import { WordList } from '@/models/screen/WordList';
-import { ref } from 'vue';
+import { Ref, computed, inject, ref } from 'vue';
 
+
+const injectedWordLists = inject<Ref<WordList[]>>('wordLists')!
+const wordLists = injectedWordLists
+const isAvailableWordListName = computed(() => {
+  const wordListNames = wordLists.value.map((wordList: WordList) => wordList.name)
+  console.log(wordListNames)
+  return wordListNames.includes(wordListName.value) ? "not available" : "available"
+})
 
 const wordListName = ref("Example 3")
 const wordListWords = ref<string[]>(["vue", "react", "svelte"])

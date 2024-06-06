@@ -52,20 +52,19 @@
   </Page>
 </template>
 <script setup lang="ts">
-import getWordLists from '@/api/getWordLists';
 import Page from '@/components/Pages/Page.vue';
 import PageContainer from '@/components/Pages/PageContainer.vue';
 import PageDescription from '@/components/Pages/PageDescription.vue';
 import PageTitle from '@/components/Pages/PageTitle.vue';
 import { WordList } from '@/models/screen/WordList';
-import { ref } from 'vue';
-
+import { Ref, inject, ref } from 'vue';
 
 const wordListName = ref("Example 3")
 const wordListWords = ref<string[]>(["vue", "react", "svelte"])
 const newWord = ref("")
 
-const wordLists = ref<WordList[]>(getWordLists())
+const injectedWordLists = inject<Ref<WordList[]>>('wordLists')!
+const wordLists = injectedWordLists
 
 function addNewWord() {
   wordListWords.value.push(newWord.value)

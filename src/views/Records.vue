@@ -39,13 +39,13 @@
 <script setup lang="ts">
 import Page from '@/components/Pages/Page.vue';
 import PageContainer from '@/components/Pages/PageContainer.vue';
-import getWordLists from '@/api/getWordLists';
 import PageDescription from "@/components/Pages/PageDescription.vue";
 import PageTitle from '@/components/Pages/PageTitle.vue';
 import { WordList } from '@/models/screen/WordList';
-import { ref } from 'vue';
+import { Ref, inject } from 'vue';
 
-const wordLists = ref<WordList[]>(getWordLists())
+const injectedWordLists = inject<Ref<WordList[]>>('wordLists')!
+const wordLists = injectedWordLists
 
 function deleteRecord(recordIndex: number) {
   console.log("delete record", recordIndex)

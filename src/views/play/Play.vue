@@ -102,13 +102,14 @@
 <script setup lang="ts">
 import Page from '@/components/Pages/Page.vue';
 import PageContainer from '@/components/Pages/PageContainer.vue';
-import getWordLists from '@/api/getWordLists.js';
 import { WordList } from '@/models/screen/WordList';
-import { ref, computed, watch } from 'vue';
+import { ref, computed, watch, inject, Ref } from 'vue';
 import SidePanel from "@/components/SidePanel/SidePanel.vue"
 import { WordListRecord } from '@/types/WordList';
 
-const wordLists = ref<WordList[]>(getWordLists())
+const injectedWordLists = inject<Ref<WordList[]>>('wordLists')!
+const wordLists = injectedWordLists
+
 const wordListIndex = ref(0)
 const wordList = computed<WordList>(() => wordLists.value[wordListIndex.value])
 
