@@ -17,7 +17,8 @@ export const i18n = {
           actions: {
             moveUp: '↑',
             moveDown: '↓',
-            delete: '×'
+            delete: '×',
+            add: '追加'
           }
         },
         createButton: '作成',
@@ -35,8 +36,8 @@ export const i18n = {
           actions: '操作'
         },
         tableData: {
-          length: 'length',
-          records: 'records',
+          length: '単語',
+          records: 'レコード',
           createdAt: '未実装',
           updatedAt: '未実装',
           actions: {
@@ -60,7 +61,7 @@ export const i18n = {
             moveUp: '↑',
             moveDown: '↓',
             delete: '×',
-            add: 'Add'
+            add: '追加'
           }
         },
         updateButton: '更新',
@@ -129,7 +130,8 @@ export const i18n = {
           actions: {
             moveUp: '↑',
             moveDown: '↓',
-            delete: '×'
+            delete: '×',
+            add: 'Add'
           }
         },
         createButton: 'Create',

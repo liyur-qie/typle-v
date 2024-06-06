@@ -35,9 +35,9 @@
                 <td>
                   <v-text-field v-model="newWord" label="新規単語を入力" variant="underlined"></v-text-field>
                 </td>
-                <td>{{ newWord.length }} characters</td>
+                <td>{{ newWord.length }} {{ $t('create.tableData.length')}}</td>
                 <td>
-                  <v-btn @click="addNewWord">Add</v-btn>
+                  <v-btn @click="addNewWord">{{ $t('create.tableData.actions.add') }}</v-btn>
                 </td>
               </tr>
             </tbody>
