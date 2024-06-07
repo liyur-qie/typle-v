@@ -1,6 +1,7 @@
 {
   "root": true,
   "rules": {
+    "semi": ["error", "never"],
     "vue/multi-word-component-names": "off",
     "eslint-plugin-vue/no-template-shadow": "off",
     "@typescript-eslint/no-non-null-assertion": "off"
