@@ -17,7 +17,10 @@
               </tr>
             </thead>
             <tbody>
-              <tr v-for="(wordList, index) in wordLists" :key="index">
+              <tr
+                v-for="(wordList, index) in wordLists"
+                :key="index"
+              >
                 <td>{{ wordList.name }}</td>
                 <td>{{ wordList.words.length }} {{ $t('edit.tableData.length') }}</td>
                 <td>{{ wordList.records.length }} {{ $t('edit.tableData.records') }}</td>
@@ -25,7 +28,7 @@
                 <td>{{ $t('edit.tableData.updatedAt') }}</td>
                 <td>
                   <RouterLink :to="'/edit/' + wordList.name">
-                    <v-btn>{{ $t('edit.tableData.actions.edit')}}</v-btn>
+                    <v-btn>{{ $t('edit.tableData.actions.edit') }}</v-btn>
                   </RouterLink>
                 </td>
               </tr>
@@ -37,12 +40,12 @@
   </Page>
 </template>
 <script setup lang="ts">
-import Page from '@/components/Pages/Page.vue';
-import PageContainer from '@/components/Pages/PageContainer.vue';
-import PageDescription from "@/components/Pages/PageDescription.vue";
-import PageTitle from '@/components/Pages/PageTitle.vue';
-import { WordList } from '@/models/screen/WordList';
-import { Ref, inject } from 'vue';
+import Page from '@/components/Pages/Page.vue'
+import PageContainer from '@/components/Pages/PageContainer.vue'
+import PageDescription from "@/components/Pages/PageDescription.vue"
+import PageTitle from '@/components/Pages/PageTitle.vue'
+import { WordList } from '@/models/screen/WordList'
+import { Ref, inject } from 'vue'
 
 const injectedWordLists = inject<Ref<WordList[]>>('wordLists')!
 const wordLists = injectedWordLists

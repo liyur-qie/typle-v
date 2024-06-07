@@ -1,15 +1,28 @@
 <template>
   <div id="sidebar">
     <AppLogo />
-    <h3 class="text-sm font-bold ml-6 mt-12 mb-8">ナビ</h3>
+    <h3 class="text-sm font-bold ml-6 mt-12 mb-8">
+      ナビ
+    </h3>
     <NavList />
-    <h3 class="text-sm font-bold ml-6 mt-12 mb-8">Languages</h3>
+    <h3 class="text-sm font-bold ml-6 mt-12 mb-8">
+      Languages
+    </h3>
     <ul>
-      <li @click="switchLang('ja')" class="selected">
-        <a href="#" class="block text-sm py-4 pl-11">日本語</a>
+      <li
+        class="selected"
+        @click="switchLang('ja')"
+      >
+        <a
+          href="#"
+          class="block text-sm py-4 pl-11"
+        >日本語</a>
       </li>
       <li @click="switchLang('en')">
-        <a href="#" class="block text-sm py-4 pl-12">English</a>
+        <a
+          href="#"
+          class="block text-sm py-4 pl-12"
+        >English</a>
       </li>
     </ul>
   </div>

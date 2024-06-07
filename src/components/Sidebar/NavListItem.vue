@@ -1,6 +1,13 @@
 <template>
-  <li class="list-none" :class="{'selected': isSelected}">
-    <RouterLink :to="route.path" class="block box-border text-sm py-4" :class="[isSelected ? 'pl-11' : 'pl-12']">
+  <li
+    class="list-none"
+    :class="{'selected': isSelected}"
+  >
+    <RouterLink
+      :to="route.path"
+      class="block box-border text-sm py-4"
+      :class="[isSelected ? 'pl-11' : 'pl-12']"
+    >
       <slot />
     </RouterLink>
   </li>

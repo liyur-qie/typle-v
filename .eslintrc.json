@@ -2,20 +2,24 @@
   "root": true,
   "rules": {
     "semi": ["error", "never"],
-    "quotes": ["error", "single"]
+    "vue/multi-word-component-names": "off",
+    "eslint-plugin-vue/no-template-shadow": "off",
+    "@typescript-eslint/no-non-null-assertion": "off"
   },
   "extends": [
     "eslint:recommended",
-    "plugin:@typescript-eslint/recommended"
+    "plugin:@typescript-eslint/recommended",
+    "plugin:vue/vue3-recommended"
   ],
-  "parser": "@typescript-eslint/parser",
+  "parser": "vue-eslint-parser",
   "parserOptions": {
+    "parser": "@typescript-eslint/parser",
     "ecmaVersion": "latest",
-    "sourceType": "module",
-    "project": ["./tsconfig.json"]
+    "sourceType": "module"
   },
   "plugins": [
-    "@typescript-eslint"
+    "@typescript-eslint",
+    "vue"
   ],
   "env": {
     "browser": true,
