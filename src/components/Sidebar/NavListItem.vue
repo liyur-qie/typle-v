@@ -1,8 +1,5 @@
 <template>
-  <li
-    class="list-none"
-    :class="{'selected': isSelected}"
-  >
+  <li class="list-none" :class="{ selected: isSelected }">
     <RouterLink
       :to="route.path"
       class="block box-border text-sm py-4"
@@ -14,16 +11,16 @@
 </template>
 <script setup lang="ts">
 defineProps<{
-  route: any,
-  isSelected: boolean
-}>()
+  route: any;
+  isSelected: boolean;
+}>();
 </script>
 <style lang="scss" scoped>
 li {
   &.selected {
     a {
-      border-left: 4px solid #E9176F;
-      color: #E9176F;
+      border-left: 4px solid #e9176f;
+      color: #e9176f;
     }
   }
 
@@ -31,8 +28,8 @@ li {
     transition: background 0.15s;
 
     &:hover {
-      background: linear-gradient(to right, #FEF0F6 0%, #FFDAE9 100%);
-      color: #E9176F;
+      background: linear-gradient(to right, #fef0f6 0%, #ffdae9 100%);
+      color: #e9176f;
     }
   }
 }

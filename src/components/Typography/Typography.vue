@@ -4,17 +4,23 @@
   </p>
 </template>
 <script setup lang="ts">
-import { computed } from 'vue'
+import { computed } from "vue";
 
 const props = defineProps<{
-  size?: "text-xs" | "text-sm" | "text-base" | "text-lg" | "text-xl" | "text-2xl"
-}>()
+  size?:
+    | "text-xs"
+    | "text-sm"
+    | "text-base"
+    | "text-lg"
+    | "text-xl"
+    | "text-2xl";
+}>();
 
 const classNames = computed(() => {
-  if(props.size !== undefined){
-    return props.size
+  if (props.size !== undefined) {
+    return props.size;
   }
 
-  return ""
-})
+  return "";
+});
 </script>

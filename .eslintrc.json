@@ -1,7 +1,6 @@
 {
   "root": true,
   "rules": {
-    "semi": ["error", "never"],
     "vue/multi-word-component-names": "off",
     "eslint-plugin-vue/no-template-shadow": "off",
     "@typescript-eslint/no-non-null-assertion": "off"
@@ -9,7 +8,8 @@
   "extends": [
     "eslint:recommended",
     "plugin:@typescript-eslint/recommended",
-    "plugin:vue/vue3-recommended"
+    "plugin:vue/vue3-recommended",
+    "prettier"
   ],
   "parser": "vue-eslint-parser",
   "parserOptions": {

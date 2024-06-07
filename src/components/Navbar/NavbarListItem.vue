@@ -1,5 +1,5 @@
 <template>
-  <li class="navbarListItem" :class="{'selected': isSelected}">
+  <li class="navbarListItem" :class="{ selected: isSelected }">
     <RouterLink :to="path" class="block box-border text-sm py-5 px-6">
       <slot />
     </RouterLink>
@@ -7,26 +7,26 @@
 </template>
 <script setup lang="ts">
 defineProps<{
-  path: string,
-  isSelected: boolean
-}>()
+  path: string;
+  isSelected: boolean;
+}>();
 </script>
 <style lang="scss" scoped>
 li {
   &.selected {
     a {
       position: relative;
-      color: #E9176F;
+      color: #e9176f;
 
       &::after {
-        content: '';
+        content: "";
         display: block;
         position: absolute;
         width: 100%;
         height: 2px;
         top: calc(100% - 2px);
         left: 0;
-        border-bottom: 2px solid #E9176F;
+        border-bottom: 2px solid #e9176f;
       }
     }
   }
@@ -35,8 +35,8 @@ li {
     transition: background 0.15s;
 
     &:hover {
-      background: linear-gradient(to bottom, #FEF0F6 0%, #FFDAE9 100%);
-      color: #E9176F;
+      background: linear-gradient(to bottom, #fef0f6 0%, #ffdae9 100%);
+      color: #e9176f;
     }
   }
 }
