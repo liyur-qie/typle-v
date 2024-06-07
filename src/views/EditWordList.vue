@@ -98,7 +98,9 @@ const isAvailableWordListName = computed(() => {
     (wordList: WordList) => wordList.name,
   );
   console.log(wordListNames);
-  return wordListNames.includes(wordListName.value) ? "not available" : "available";
+  return wordListNames.includes(wordListName.value)
+    ? "not available"
+    : "available";
 });
 
 const wordListName = ref("Example 3");

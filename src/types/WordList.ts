@@ -24,4 +24,4 @@ export type WordList = {
   info: WordListInfo;
 };
 
-export default WordList;
+export default WordList

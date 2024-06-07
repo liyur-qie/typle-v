@@ -3,21 +3,21 @@ import type {
   WordListWord,
   WordListInfo,
   WordList as WordListType,
-} from "@/types/WordList";
+} from "@/types/WordList"
 
 export class WordList implements WordListType {
   // 単語リスト名
-  name = "";
+  name = ""
   // 単語リスト詳細説明
-  description = "";
+  description = ""
   // 単語リスト
-  words: WordListWord[] = [];
+  words: WordListWord[] = []
   // ランキング情報
-  records: WordListRecord[] = [];
+  records: WordListRecord[] = []
   // 単語リスト情報
   info: WordListInfo = {
     createdAt: "",
     createdBy: "",
     updatedAt: "",
-  };
+  }
 }
