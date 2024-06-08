@@ -4,7 +4,7 @@
   </p>
 </template>
 <script setup lang="ts">
-import { computed } from "vue";
+import { computed } from "vue"
 
 const props = defineProps<{
   size?:
@@ -14,13 +14,13 @@ const props = defineProps<{
     | "text-lg"
     | "text-xl"
     | "text-2xl";
-}>();
+}>()
 
 const classNames = computed(() => {
   if (props.size !== undefined) {
-    return props.size;
+    return props.size
   }
 
-  return "";
-});
+  return ""
+})
 </script>

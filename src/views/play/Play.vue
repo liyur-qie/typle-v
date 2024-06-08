@@ -128,53 +128,53 @@
   </Page>
 </template>
 <script setup lang="ts">
-import Page from "@/components/Pages/Page.vue";
-import PageContainer from "@/components/Pages/PageContainer.vue";
-import { WordList } from "@/models/screen/WordList";
-import { ref, computed, watch, inject, Ref } from "vue";
-import SidePanel from "@/components/SidePanel/SidePanel.vue";
-import { WordListRecord } from "@/types/WordList";
+import Page from "@/components/Pages/Page.vue"
+import PageContainer from "@/components/Pages/PageContainer.vue"
+import { WordList } from "@/models/screen/WordList"
+import { ref, computed, watch, inject, Ref } from "vue"
+import SidePanel from "@/components/SidePanel/SidePanel.vue"
+import { WordListRecord } from "@/types/WordList"
 
-const injectedWordLists = inject<Ref<WordList[]>>("wordLists")!;
-const wordLists = injectedWordLists;
+const injectedWordLists = inject<Ref<WordList[]>>("wordLists")!
+const wordLists = injectedWordLists
 
-const wordListIndex = ref(0);
+const wordListIndex = ref(0)
 const selectedWordList = computed<WordList>(
   () => wordLists.value[wordListIndex.value],
-);
+)
 
 function selectWordList(newWordListIndex: number) {
-  wordListIndex.value = newWordListIndex;
-  wordIndex.value = 0;
-  gameState.value = "stand_by";
+  wordListIndex.value = newWordListIndex
+  wordIndex.value = 0
+  gameState.value = "stand_by"
 }
 
-const wordIndex = ref(0);
-const wordInputField = ref("");
+const wordIndex = ref(0)
+const wordInputField = ref("")
 const wordExpectedToInput = computed(() => {
-  if (wordIndex.value === selectedWordList.value.words.length) return "";
-  return selectedWordList.value.words[wordIndex.value].input;
-});
+  if (wordIndex.value === selectedWordList.value.words.length) return ""
+  return selectedWordList.value.words[wordIndex.value].input
+})
 
 type GameState = "stand_by" | "playing" | "accomplished";
-const gameState = ref<GameState>("stand_by");
+const gameState = ref<GameState>("stand_by")
 
 watch(wordInputField, () => {
   if (wordIndex.value === selectedWordList.value.words.length) {
-    gameState.value = "accomplished";
+    gameState.value = "accomplished"
     const newRecord: WordListRecord = {
       time: 3,
       length: selectedWordList.value.words.length,
       date: new Date().toLocaleString(),
-    };
-    selectedWordList.value.records.push(newRecord);
-    wordInputField.value = "Accomplished!";
-    return;
+    }
+    selectedWordList.value.records.push(newRecord)
+    wordInputField.value = "Accomplished!"
+    return
   }
 
   if (wordInputField.value === wordExpectedToInput.value) {
-    wordIndex.value++;
-    wordInputField.value = "";
+    wordIndex.value++
+    wordInputField.value = ""
   }
-});
+})
 </script>

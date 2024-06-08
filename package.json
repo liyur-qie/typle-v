@@ -8,8 +8,8 @@
     "build": "vue-tsc && vite build",
     "preview": "vite preview",
     "prepare": "husky",
-    "format": "npx prettier --write src",
-    "lint": "npx eslint --fix src",
+    "format": "npx prettier --write src/**/*.{ts,vue}",
+    "lint": "npx eslint --fix src/**/*.{ts,vue}",
     "fix": "npm run format && npm run lint"
   },
   "dependencies": {

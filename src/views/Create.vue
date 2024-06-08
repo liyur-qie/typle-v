@@ -79,53 +79,53 @@
   </Page>
 </template>
 <script setup lang="ts">
-import Page from "@/components/Pages/Page.vue";
-import PageContainer from "@/components/Pages/PageContainer.vue";
-import PageDescription from "@/components/Pages/PageDescription.vue";
-import PageTitle from "@/components/Pages/PageTitle.vue";
-import { WordList } from "@/models/screen/WordList";
-import { Ref, inject, ref } from "vue";
+import Page from "@/components/Pages/Page.vue"
+import PageContainer from "@/components/Pages/PageContainer.vue"
+import PageDescription from "@/components/Pages/PageDescription.vue"
+import PageTitle from "@/components/Pages/PageTitle.vue"
+import { WordList } from "@/models/screen/WordList"
+import { Ref, inject, ref } from "vue"
 
-const wordListName = ref("Example 3");
-const wordListWords = ref<string[]>(["vue", "react", "svelte"]);
-const newWord = ref("");
+const wordListName = ref("Example 3")
+const wordListWords = ref<string[]>(["vue", "react", "svelte"])
+const newWord = ref("")
 
-const injectedWordLists = inject<Ref<WordList[]>>("wordLists")!;
-const wordLists = injectedWordLists;
+const injectedWordLists = inject<Ref<WordList[]>>("wordLists")!
+const wordLists = injectedWordLists
 
 function addNewWord() {
-  wordListWords.value.push(newWord.value);
-  newWord.value = "";
+  wordListWords.value.push(newWord.value)
+  newWord.value = ""
 }
 
 function moveWordUp(index: number) {
-  if (index === 0) return;
-  const swapWord = wordListWords.value[index - 1];
-  const moveWord = wordListWords.value[index];
-  wordListWords.value[index] = swapWord;
-  wordListWords.value[index - 1] = moveWord;
+  if (index === 0) return
+  const swapWord = wordListWords.value[index - 1]
+  const moveWord = wordListWords.value[index]
+  wordListWords.value[index] = swapWord
+  wordListWords.value[index - 1] = moveWord
 }
 
 function moveWordDown(index: number) {
-  if (index === wordListWords.value.length - 1) return;
-  const swapWord = wordListWords.value[index + 1];
-  const moveWord = wordListWords.value[index];
-  wordListWords.value[index] = swapWord;
-  wordListWords.value[index + 1] = moveWord;
+  if (index === wordListWords.value.length - 1) return
+  const swapWord = wordListWords.value[index + 1]
+  const moveWord = wordListWords.value[index]
+  wordListWords.value[index] = swapWord
+  wordListWords.value[index + 1] = moveWord
 }
 
 function deleteWord(index: number) {
-  wordListWords.value.splice(index, 1);
+  wordListWords.value.splice(index, 1)
 }
 
 function addWordList() {
-  const newWordList = new WordList();
-  newWordList.name = wordListName.value;
+  const newWordList = new WordList()
+  newWordList.name = wordListName.value
   newWordList.words = wordListWords.value.map((word) => ({
     display: word,
     input: word,
-  }));
-  newWordList.info.createdAt = new Date().toLocaleString();
-  wordLists.value.push(newWordList);
+  }))
+  newWordList.info.createdAt = new Date().toLocaleString()
+  wordLists.value.push(newWordList)
 }
 </script>

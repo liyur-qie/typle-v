@@ -9,7 +9,7 @@
 defineProps<{
   path: string;
   isSelected: boolean;
-}>();
+}>()
 </script>
 <style lang="scss" scoped>
 li {

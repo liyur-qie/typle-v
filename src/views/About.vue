@@ -43,8 +43,8 @@
   </Page>
 </template>
 <script setup lang="ts">
-import Page from "@/components/Pages/Page.vue";
-import PageContainer from "@/components/Pages/PageContainer.vue";
+import Page from "@/components/Pages/Page.vue"
+import PageContainer from "@/components/Pages/PageContainer.vue"
 const indexes = [
   "概要",
   "遊び方",
@@ -53,7 +53,7 @@ const indexes = [
   "単語リストの作成",
   "単語リストの編集",
   "単語リストの削除",
-];
+]
 </script>
 <style lang="scss" scoped>
 main {

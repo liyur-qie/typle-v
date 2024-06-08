@@ -15,11 +15,11 @@
   </div>
 </template>
 <script setup lang="ts">
-import AppLogo from "@/components/Sidebar/AppLogo.vue";
-import NavList from "@/components/Sidebar/NavList.vue";
+import AppLogo from "@/components/Sidebar/AppLogo.vue"
+import NavList from "@/components/Sidebar/NavList.vue"
 
 function switchLang(lang: "ja" | "en") {
-  return lang;
+  return lang
 }
 </script>
 <style lang="scss" scoped>
