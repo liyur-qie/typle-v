@@ -17,9 +17,12 @@
 <script setup lang="ts">
 import AppLogo from "@/components/Sidebar/AppLogo.vue"
 import NavList from "@/components/Sidebar/NavList.vue"
+import { useI18n } from "vue-i18n"
+
+const { locale } = useI18n({ useScope: 'global' })
 
 function switchLang(lang: "ja" | "en") {
-  return lang
+  locale.value = lang
 }
 </script>
 <style lang="scss" scoped>

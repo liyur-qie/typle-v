@@ -1,4 +1,5 @@
 export const i18n = {
+  legacy: false,
   locale: "ja",
   fallbackLocale: "en",
   messages: {
