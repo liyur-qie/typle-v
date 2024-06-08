@@ -2,8 +2,7 @@
   <li class="list-none" :class="{ selected: isSelected }">
     <RouterLink
       :to="route.path"
-      class="block box-border text-sm py-4"
-      :class="[isSelected ? 'pl-11' : 'pl-12']"
+      class="block box-border text-sm py-4 pl-12"
     >
       <slot />
     </RouterLink>
@@ -19,17 +18,33 @@ defineProps<{
 li {
   &.selected {
     a {
-      border-left: 4px solid #e9176f;
       color: #e9176f;
+
+      &::after {
+        transform: scaleY(100%);
+        transition: transform 0.25s;
+      }
     }
   }
-
+  
   a {
-    transition: background 0.15s;
-
+    position: relative;
+    
     &:hover {
       background: linear-gradient(to right, #fef0f6 0%, #ffdae9 100%);
       color: #e9176f;
+    }
+      
+    &::after {
+      content: '';
+      display: block;
+      background-color: #e9176f;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 4px;
+      height: 100%;
+      transform: scaleY(0%);
     }
   }
 }
