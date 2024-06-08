@@ -1,10 +1,10 @@
 <template>
-  <div class="appContainer w-10/12 mx-auto mt-12">
+  <div class="pageContainer w-10/12 mx-auto mt-12">
     <slot />
   </div>
 </template>
 <style lang="scss" scoped>
-.appContainer {
+.pageContainer {
   max-width: 1280px;
 }
 </style>
