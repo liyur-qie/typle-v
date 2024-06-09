@@ -1,7 +1,9 @@
 <template>
   <nav class="flex justify-center items-center bg-white">
     <div class="navbar w-full">
-      <div class="navbarContainer flex justify-between lg:justify-end items-center w-10/12 mx-auto">
+      <div
+        class="navbarContainer flex justify-between lg:justify-end items-center w-10/12 mx-auto"
+      >
         <h1 class="text-lg lg:hidden">Typle</h1>
         <NavbarList />
       </div>

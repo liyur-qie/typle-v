@@ -68,7 +68,10 @@
                 </tbody>
               </v-table>
             </section>
-            <section id="selectWordList" class="lg:w-5/12 md:w-full md:mt-6 lg:mt-0">
+            <section
+              id="selectWordList"
+              class="lg:w-5/12 md:w-full md:mt-6 lg:mt-0"
+            >
               <h2 class="text-2xl">
                 {{ $t("play.wordLists.title") }}
               </h2>

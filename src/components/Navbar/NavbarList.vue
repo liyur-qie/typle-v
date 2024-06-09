@@ -37,7 +37,6 @@
 <script setup lang="ts">
 import { useRoute } from "vue-router"
 
-
 const route = useRoute()
 function isSelected(path: string): boolean {
   return path === route.path
@@ -65,7 +64,7 @@ li {
       position: relative;
       color: #e9176f;
 
-      &::after{
+      &::after {
         transform: scaleX(100%);
       }
     }

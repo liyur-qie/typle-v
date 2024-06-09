@@ -1,25 +1,25 @@
 <template>
-    <li class="list-none" :class="{ selected: isSelected('/home') }">
+  <li class="list-none" :class="{ selected: isSelected('/home') }">
     <RouterLink to="/home" class="block box-border text-sm py-4 pl-12">
       {{ $t("ui.navList.nav.home") }}
     </RouterLink>
   </li>
-    <li class="list-none" :class="{ selected: isSelected('/play') }">
+  <li class="list-none" :class="{ selected: isSelected('/play') }">
     <RouterLink to="/play" class="block box-border text-sm py-4 pl-12">
       {{ $t("ui.navList.nav.play") }}
     </RouterLink>
   </li>
-    <li class="list-none" :class="{ selected: isSelected('/records') }">
+  <li class="list-none" :class="{ selected: isSelected('/records') }">
     <RouterLink to="/records" class="block box-border text-sm py-4 pl-12">
       {{ $t("ui.navList.nav.records") }}
     </RouterLink>
   </li>
-    <li class="list-none" :class="{ selected: isSelected('/create') }">
+  <li class="list-none" :class="{ selected: isSelected('/create') }">
     <RouterLink to="/create" class="block box-border text-sm py-4 pl-12">
       {{ $t("ui.navList.nav.create") }}
     </RouterLink>
   </li>
-    <li class="list-none" :class="{ selected: isSelected('/edit') }">
+  <li class="list-none" :class="{ selected: isSelected('/edit') }">
     <RouterLink to="/edit" class="block box-border text-sm py-4 pl-12">
       {{ $t("ui.navList.nav.edit") }}
     </RouterLink>
@@ -45,17 +45,17 @@ li {
       }
     }
   }
-  
+
   a {
     position: relative;
-    
+
     &:hover {
       background: linear-gradient(to right, #fef0f6 0%, #ffdae9 100%);
       color: #e9176f;
     }
-      
+
     &::after {
-      content: '';
+      content: "";
       display: block;
       background-color: #e9176f;
       position: absolute;

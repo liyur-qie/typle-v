@@ -122,7 +122,7 @@ export const i18n = {
           play: "遊ぶ",
           records: "記録",
           create: "作成",
-          edit: "編集"  
+          edit: "編集",
         },
         navList: {
           nav: {
@@ -131,12 +131,12 @@ export const i18n = {
             play: "遊ぶ",
             records: "記録",
             create: "作成",
-            edit: "編集"
+            edit: "編集",
           },
           lang: {
-            headerTitle: "言語"
-          }
-        }
+            headerTitle: "言語",
+          },
+        },
       },
     },
     en: {
@@ -258,7 +258,7 @@ export const i18n = {
           play: "Play",
           records: "Records",
           create: "Create",
-          edit: "Edit"  
+          edit: "Edit",
         },
         navList: {
           nav: {
@@ -267,13 +267,13 @@ export const i18n = {
             play: "Play",
             records: "Records",
             create: "Create",
-            edit: "Edit"
+            edit: "Edit",
           },
           lang: {
-            headerTitle: "Launguages"
-          }
-        }
-      }
+            headerTitle: "Launguages",
+          },
+        },
+      },
     },
   },
 }
