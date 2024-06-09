@@ -2,27 +2,27 @@
   <ul class="flex list-style-none">
     <li class="navbarListItem" :class="{ selected: isSelected('/home') }">
       <RouterLink to="/home" class="block box-border text-sm py-5 px-6">
-        {{ $t("ui.navbarList.nav.home") }}
+        {{ $t("ui.navbarList.home") }}
       </RouterLink>
     </li>
     <li class="navbarListItem" :class="{ selected: isSelected('/play') }">
       <RouterLink to="/play" class="block box-border text-sm py-5 px-6">
-        {{ $t("ui.navbarList.nav.play") }}
+        {{ $t("ui.navbarList.play") }}
       </RouterLink>
     </li>
     <li class="navbarListItem" :class="{ selected: isSelected('/records') }">
       <RouterLink to="/records" class="block box-border text-sm py-5 px-6">
-        {{ $t("ui.navbarList.nav.records") }}
+        {{ $t("ui.navbarList.records") }}
       </RouterLink>
     </li>
     <li class="navbarListItem" :class="{ selected: isSelected('/create') }">
       <RouterLink to="/create" class="block box-border text-sm py-5 px-6">
-        {{ $t("ui.navbarList.nav.create") }}
+        {{ $t("ui.navbarList.create") }}
       </RouterLink>
     </li>
     <li class="navbarListItem" :class="{ selected: isSelected('/edit') }">
       <RouterLink to="/edit" class="block box-border text-sm py-5 px-6">
-        {{ $t("ui.navbarList.nav.edit") }}
+        {{ $t("ui.navbarList.edit") }}
       </RouterLink>
     </li>
     <li>

@@ -1,14 +1,14 @@
 <template>
   <div id="sidebar">
     <AppLogo />
-    <h3 class="text-sm font-bold ml-6 mt-12 mb-8">ナビ</h3>
+    <h3 class="text-sm font-bold ml-6 mt-12 mb-8">{{ $t("ui.navList.nav.headerTitle") }}</h3>
     <NavList />
-    <h3 class="text-sm font-bold ml-6 mt-12 mb-8">Languages</h3>
+    <h3 class="text-sm font-bold ml-6 mt-12 mb-8">{{ $t("ui.navList.lang.headerTitle" )}}</h3>
     <ul>
-      <li @click="switchLang('ja')" :class="{ selected: locale === 'ja' }">
+      <li :class="{ selected: locale === 'ja' }" @click="switchLang('ja')">
         <a href="#" class="block text-sm py-4 pl-12">日本語</a>
       </li>
-      <li @click="switchLang('en')" :class="{ selected: locale === 'en' }">
+      <li :class="{ selected: locale === 'en' }" @click="switchLang('en')">
         <a href="#" class="block text-sm py-4 pl-12">English</a>
       </li>
     </ul>

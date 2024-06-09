@@ -118,19 +118,26 @@ export const i18n = {
       },
       ui: {
         navbarList: {
+          home: "ホーム",
+          play: "遊ぶ",
+          records: "記録",
+          create: "作成",
+          edit: "編集"  
+        },
+        navList: {
           nav: {
             headerTitle: "ナビ",
             home: "ホーム",
             play: "遊ぶ",
             records: "記録",
             create: "作成",
-            edit: "編集"  
+            edit: "編集"
           },
           lang: {
-            headerTitle: "言語",
+            headerTitle: "言語"
           }
         }
-      }
+      },
     },
     en: {
       create: {
@@ -247,16 +254,23 @@ export const i18n = {
       },
       ui: {
         navbarList: {
+          home: "Home",
+          play: "Play",
+          records: "Records",
+          create: "Create",
+          edit: "Edit"  
+        },
+        navList: {
           nav: {
-            headerTitle: "Nav",
+            headerTitle: "Launguages",
             home: "Home",
             play: "Play",
             records: "Records",
             create: "Create",
-            edit: "Edit"  
+            edit: "Edit"
           },
           lang: {
-            headerTitle: "Laungages",
+            headerTitle: "Launguages"
           }
         }
       }
