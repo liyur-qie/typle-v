@@ -5,10 +5,10 @@
     <NavList />
     <h3 class="text-sm font-bold ml-6 mt-12 mb-8">Languages</h3>
     <ul>
-      <li class="selected" @click="switchLang('ja')">
-        <a href="#" class="block text-sm py-4 pl-11">日本語</a>
+      <li @click="switchLang('ja')" :class="{ selected: locale === 'ja' }">
+        <a href="#" class="block text-sm py-4 pl-12">日本語</a>
       </li>
-      <li @click="switchLang('en')">
+      <li @click="switchLang('en')" :class="{ selected: locale === 'en' }">
         <a href="#" class="block text-sm py-4 pl-12">English</a>
       </li>
     </ul>
@@ -35,17 +35,33 @@ function switchLang(lang: "ja" | "en") {
 li {
   &.selected {
     a {
-      border-left: 4px solid #e9176f;
       color: #e9176f;
+
+      &::after {
+        transform: scaleY(100%);
+        transition: transform 0.25s;
+      }
     }
   }
 
   a {
-    transition: background 0.15s;
+    position: relative;
 
     &:hover {
       background: linear-gradient(to right, #fef0f6 0%, #ffdae9 100%);
       color: #e9176f;
+    }
+
+    &::after {
+      background-color: #e9176f;
+      content: '';
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 4px;
+      height: 100%;
+      transform: scaleY(0%);
     }
   }
 }
