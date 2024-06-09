@@ -28,8 +28,8 @@
               {{ word.input }}
             </v-chip>
           </section>
-          <section class="mt-8 flex justify-between">
-            <section id="rankings" class="w-6/12">
+          <section class="mt-8 flex flex-wrap justify-between">
+            <section id="rankings" class="lg:w-6/12 md:w-full">
               <h2 class="text-2xl">
                 {{ $t("play.records.title") }}
               </h2>
@@ -68,7 +68,7 @@
                 </tbody>
               </v-table>
             </section>
-            <section id="selectWordList" class="w-5/12">
+            <section id="selectWordList" class="lg:w-5/12 md:w-full md:mt-6">
               <h2 class="text-2xl">
                 {{ $t("play.wordLists.title") }}
               </h2>
