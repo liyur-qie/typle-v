@@ -1,13 +1,30 @@
 <template>
   <ul class="flex list-style-none">
-    <NavbarListItem
-      v-for="(route, index) in routes"
-      :key="index"
-      :path="route.path"
-      :is-selected="isSelected(route.path)"
-    >
-      {{ route.text }}
-    </NavbarListItem>
+    <li class="navbarListItem" :class="{ selected: isSelected('/home') }">
+      <RouterLink to="/home" class="block box-border text-sm py-5 px-6">
+        {{ $t("ui.navbarList.nav.home") }}
+      </RouterLink>
+    </li>
+    <li class="navbarListItem" :class="{ selected: isSelected('/play') }">
+      <RouterLink to="/play" class="block box-border text-sm py-5 px-6">
+        {{ $t("ui.navbarList.nav.play") }}
+      </RouterLink>
+    </li>
+    <li class="navbarListItem" :class="{ selected: isSelected('/records') }">
+      <RouterLink to="/records" class="block box-border text-sm py-5 px-6">
+        {{ $t("ui.navbarList.nav.records") }}
+      </RouterLink>
+    </li>
+    <li class="navbarListItem" :class="{ selected: isSelected('/create') }">
+      <RouterLink to="/create" class="block box-border text-sm py-5 px-6">
+        {{ $t("ui.navbarList.nav.create") }}
+      </RouterLink>
+    </li>
+    <li class="navbarListItem" :class="{ selected: isSelected('/edit') }">
+      <RouterLink to="/edit" class="block box-border text-sm py-5 px-6">
+        {{ $t("ui.navbarList.nav.edit") }}
+      </RouterLink>
+    </li>
     <li>
       <a
         href="https://github.com/liyur-qie/typle-v"
@@ -18,19 +35,47 @@
   </ul>
 </template>
 <script setup lang="ts">
-import NavbarListItem from "@/components/Navbar/NavbarListItem.vue"
 import { useRoute } from "vue-router"
 
-const routes = [
-  { path: "/home", text: "ホーム" },
-  { path: "/play", text: "遊ぶ" },
-  { path: "/records", text: "記録" },
-  { path: "/create", text: "作成" },
-  { path: "/edit", text: "編集" },
-]
 
 const route = useRoute()
 function isSelected(path: string): boolean {
   return path === route.path
 }
 </script>
+<style lang="scss" scoped>
+li {
+  a {
+    &::after {
+      content: "";
+      display: block;
+      position: absolute;
+      width: 100%;
+      height: 2px;
+      top: calc(100% - 2px);
+      left: 0;
+      border-bottom: 2px solid #e9176f;
+      transform: scaleX(0%);
+      transition: transform 0.25s;
+    }
+  }
+
+  &.selected {
+    a {
+      position: relative;
+      color: #e9176f;
+
+      &::after{
+        transform: scaleX(100%);
+      }
+    }
+  }
+
+  a {
+    &:hover {
+      background: linear-gradient(to bottom, #fef0f6 0%, #ffdae9 100%);
+      color: #e9176f;
+    }
+  }
+}
+</style>
