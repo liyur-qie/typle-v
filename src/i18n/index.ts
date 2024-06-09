@@ -262,7 +262,7 @@ export const i18n = {
         },
         navList: {
           nav: {
-            headerTitle: "Launguages",
+            headerTitle: "Navigation",
             home: "Home",
             play: "Play",
             records: "Records",
